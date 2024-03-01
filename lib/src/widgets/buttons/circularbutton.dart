@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import '../../constants/colors.dart';
 class CircularButton extends StatelessWidget {
   Function onPress;
+  IconData icon;
 
-  CircularButton(this.onPress);
+  CircularButton({required this.onPress,this.icon = Icons.arrow_forward});
   @override
   Widget build(BuildContext context) {
     final color1 = AppColors.LINEAR_GRADIENT_COLOR_1;
@@ -20,7 +21,7 @@ class CircularButton extends StatelessWidget {
           shape: BoxShape.circle,
           gradient: LinearGradient(colors: [color1, color2]),
         ),
-        child: Icon(Icons.arrow_forward,color: Colors.white,),
+        child: Icon(this.icon,color: Colors.white,),
       ),
     );
   }

@@ -18,11 +18,16 @@ class MyApp extends StatelessWidget {
       title: 'Kanboo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          appBarTheme: AppBarTheme(
+              iconTheme: IconThemeData(
+                  color: Colors.white
+              )
+          ),
         fontFamily: GoogleFonts.urbanist().fontFamily,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: AppRoutes.intro,
+      initialRoute: AppRoutes.mainDashboard,
       getPages: AppPages.routes,
     );
   }

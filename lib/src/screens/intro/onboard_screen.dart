@@ -99,7 +99,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
             style: TextStyle(color: AppColors.DULL_WHITE, fontSize: 14),
           ),
           CircularButton(
-              (){
+              onPress: (){
                 print(_curr);
                 if(_curr < 2){
                   controller.animateToPage(_curr+1,
