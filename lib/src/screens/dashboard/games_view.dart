@@ -4,7 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
+import 'package:kanboo/src/constants/routes.dart';
 import 'package:kanboo/src/constants/styles.dart';
+import 'package:kanboo/src/screens/game/create_game.dart';
+import 'package:kanboo/src/screens/notifications_screen.dart';
 
 import '../../widgets/background.dart';
 import '../../widgets/buttons/circularbutton.dart';
@@ -28,6 +31,7 @@ class _GamesViewState extends State<GamesView> {
         backgroundColor: Colors.transparent,
           floatingActionButton:  CircularButton(
                  onPress:  (){
+                   Get.toNamed(AppRoutes.createGame);
                  },
             icon: Icons.add,
 
@@ -128,7 +132,11 @@ class _GamesViewState extends State<GamesView> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text("Home",style: AppStyles.HEADING_STYLE,),
-        SvgPicture.asset('assets/bell.svg',height: 35,)
+        GestureDetector(
+            onTap: (){
+              Get.toNamed(AppRoutes.notificationScreen);
+            },
+            child: SvgPicture.asset('assets/bell.svg',height: 35,))
       ],
     ).marginOnly(left: 25,right: 20);
   }
@@ -145,7 +153,7 @@ class _GamesViewState extends State<GamesView> {
             childAspectRatio: 3 / 3,
             crossAxisSpacing: 13,
             mainAxisSpacing: 13),
-        itemCount: 20,
+        itemCount: 4,
         itemBuilder: (BuildContext ctx, index) {
           return GameViewListItem();
         }).marginOnly(left: 20,right: 20);

@@ -4,8 +4,11 @@ import 'package:kanboo/src/screens/auth/forgot_password_screen.dart';
 import 'package:kanboo/src/screens/auth/main_auth.dart';
 import 'package:kanboo/src/screens/auth/sign_in_email_screen.dart';
 import 'package:kanboo/src/screens/auth/sign_up_email_screen.dart';
+import 'package:kanboo/src/screens/dashboard/dashboard.dart';
 import 'package:kanboo/src/screens/dashboard/games_view.dart';
+import 'package:kanboo/src/screens/game/create_game.dart';
 import 'package:kanboo/src/screens/intro/onboard_screen.dart';
+import 'package:kanboo/src/screens/notifications_screen.dart';
 import 'constants/routes.dart';
 
 class AppPages {
@@ -55,8 +58,21 @@ class AppPages {
       name: AppRoutes.mainDashboard,
       transition: Transition.fade,
       transitionDuration: Duration(milliseconds: 200),
-      page: () => GamesView(),
+      page: () => MainDashboardPage(),
     ),
 
+    GetPage(
+      name: AppRoutes.notificationScreen,
+      transition: Transition.fade,
+      transitionDuration: Duration(milliseconds: 200),
+      page: () => NotificationScreen(),
+    ),
+
+    GetPage(
+      name: AppRoutes.createGame,
+      transition: Transition.fade,
+      transitionDuration: Duration(milliseconds: 200),
+      page: () => CreateGameScreen(),
+    ),
   ];
 }
