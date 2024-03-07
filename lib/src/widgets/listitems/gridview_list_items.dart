@@ -41,7 +41,7 @@ class GameViewListItem extends StatelessWidget {
                   ],
                 ),
               ),
-              Text(" 60 mins",style: AppStyles.DESCRIPTION_STYLE.copyWith(color: Colors.white,fontWeight: FontWeight.w600),)
+              Expanded(child: Text(" 60 mins",style: AppStyles.DESCRIPTION_STYLE.copyWith(color: Colors.white,fontWeight: FontWeight.w600),overflow: TextOverflow.ellipsis,))
 
             ],
           ),

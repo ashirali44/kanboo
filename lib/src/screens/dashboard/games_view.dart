@@ -150,7 +150,7 @@ class _GamesViewState extends State<GamesView> {
        physics: BouncingScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 200,
-            childAspectRatio: 3 / 3,
+            childAspectRatio: .9,
             crossAxisSpacing: 13,
             mainAxisSpacing: 13),
         itemCount: 4,

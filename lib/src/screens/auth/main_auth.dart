@@ -99,7 +99,9 @@ class _MainAuthScreenState extends State<MainAuthScreen> {
           withInBetween: 40,
           showBg: true,
           gradient: AppGradients.gradient,
-          onPress: () {  },
+          onPress: () {
+            Get.toNamed(AppRoutes.mainDashboard);
+          },
           gradientStroke: .3,
           text: 'Sign up with Email',
         ).marginOnly(bottom: 15),
