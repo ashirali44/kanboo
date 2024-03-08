@@ -153,7 +153,7 @@ class _GamesViewState extends State<GamesView> {
             childAspectRatio: .9,
             crossAxisSpacing: 13,
             mainAxisSpacing: 13),
-        itemCount: 4,
+        itemCount: 10,
         itemBuilder: (BuildContext ctx, index) {
           return GameViewListItem();
         }).marginOnly(left: 20,right: 20);
