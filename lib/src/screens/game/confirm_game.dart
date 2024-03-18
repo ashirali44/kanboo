@@ -17,51 +17,49 @@ import '../../widgets/detail_widgets/name_spot_widget.dart';
 import '../../widgets/detail_widgets/players_widget.dart';
 import '../../widgets/detail_widgets/waiting_list_widget.dart';
 
-class GameDetailsViewScreen extends StatefulWidget {
-  final int spots;
-  const GameDetailsViewScreen({super.key,required this.spots});
+class GameConfirmSelection extends StatefulWidget {
+  const GameConfirmSelection({super.key});
 
   @override
-  State<GameDetailsViewScreen> createState() => _GameDetailsViewScreenState();
+  State<GameConfirmSelection> createState() => _GameConfirmSelectionState();
 }
 
-class _GameDetailsViewScreenState extends State<GameDetailsViewScreen> {
+class _GameConfirmSelectionState extends State<GameConfirmSelection> {
   Widget build(BuildContext context) {
     return InputBackground(
       child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
           backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            title: Text(
-              "Game Details",
-              style: AppStyles.HEADING_STYLE.copyWith(fontSize: 18),
-            ),
-            centerTitle: true,
-            actions: [
-              SvgPicture.asset(
-                'assets/export_icon.svg',
-                height: 30,
-              ),
-              SizedBox(
-                width: 20,
-              ),
-            ],
+          title: Text(
+            "Game Details",
+            style: AppStyles.HEADING_STYLE.copyWith(fontSize: 18),
           ),
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              GameHeaderDetails(),
-              DividerWidget(),
-              GameDescriptionWidgetDetails().marginOnly(bottom: 20),
-              DateWidgetGameDetails().marginOnly(bottom: 25),
-              widget.spots > 1 ? SizedBox.shrink() : WaitingListWidget().marginOnly(bottom: 20),
-              PlayerCount().marginOnly(bottom: 20),
-              GamePlayerGrid(),
-            ],
-          ).marginOnly(left: 20, right: 20),
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-          floatingActionButton: JoinButton(),
-         ),
+          centerTitle: true,
+          actions: [
+            SvgPicture.asset(
+              'assets/export_icon.svg',
+              height: 30,
+            ),
+            SizedBox(
+              width: 20,
+            ),
+          ],
+        ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GameHeaderDetails(),
+            DividerWidget(),
+            GameDescriptionWidgetDetails().marginOnly(bottom: 20),
+            DateWidgetGameDetails().marginOnly(bottom: 25),
+            PlayerCount().marginOnly(bottom: 20),
+            GamePlayerGrid(),
+          ],
+        ).marginOnly(left: 20, right: 20),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: JoinButton(),
+      ),
     );
   }
 
@@ -76,10 +74,10 @@ class _GameDetailsViewScreenState extends State<GameDetailsViewScreen> {
       child: PlayerGridView(
         players: List.generate(
           12,
-          (index) => Player(
+              (index) => Player(
             name: 'Player ${index + 1}',
             imageUrl:
-                'assets/player.png', // Replace with your actual image asset path
+            'assets/player.png', // Replace with your actual image asset path
             number: index + 1,
             score: (index + 1) * 10,
           ),
@@ -94,13 +92,13 @@ class _GameDetailsViewScreenState extends State<GameDetailsViewScreen> {
       withInBetween: 40,
       showBg: true,
       gradient: AppGradients.JoinGameBorder,
-      bgGradient:widget.spots >1 ? AppGradients.RoundButtonBG : AppGradients.NoGradient,
+      bgGradient: AppGradients.RoundButtonBG ,
       onPress: () {
-        Get.to(GamePoistionSelect());
+       
       },
       gradientStroke: .3,
       logoOnly: true,
-      text: 'Join Game',
+      text: 'Join Discord Channel',
     ).marginOnly(left: 20, right: 20,bottom: 10);
   }
 

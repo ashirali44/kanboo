@@ -4,6 +4,9 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kanboo/src/screens/dashboard/explore.dart';
 import 'package:kanboo/src/screens/dashboard/games_view.dart';
+import 'package:kanboo/src/screens/messages/message_list_screen.dart';
+
+import '../profile/profile_screen.dart';
 
 
 class MainDashboardPage extends StatefulWidget {
@@ -17,7 +20,7 @@ class _MyHomePageState extends State<MainDashboardPage>
         SingleTickerProviderStateMixin {
   int currentIndex = 0;
   TabController? _tabController;
-  List<Widget> widgetsList = [GamesView(),ExploreSectionScreen(),SizedBox(),SizedBox()];
+  List<Widget> widgetsList = [GamesView(),ExploreSectionScreen(),MessageScreenList(),ProfileScreen()];
 
   @override
   bool get wantKeepAlive => true;
@@ -76,17 +79,17 @@ class _MyHomePageState extends State<MainDashboardPage>
                 label: 'Search',
                 icon: SvgPicture.asset(currentIndex == 1
                     ? "assets/search_white.svg"
-                    : "assets/search_grey.svg")),
+                    : "assets/search_grey.svg").marginOnly(bottom: 04)),
             BottomNavigationBarItem(
                 label: 'Chats',
                 icon: SvgPicture.asset(currentIndex == 2
                     ? "assets/messages_white.svg"
-                    : "assets/chat_grey.svg")),
+                    : "assets/chat_grey.svg").marginOnly(bottom: 04)),
             BottomNavigationBarItem(
                 label: 'Profile',
                 icon: SvgPicture.asset(currentIndex == 3
                     ? "assets/user_white.svg"
-                    : "assets/user_grey.svg",fit: BoxFit.cover,)),
+                    : "assets/user_grey.svg",fit: BoxFit.cover,height: 28,).marginOnly(top: 3)),
             // Add more items as needed
           ],
         ),

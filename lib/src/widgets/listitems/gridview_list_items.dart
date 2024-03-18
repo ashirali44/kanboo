@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gradient_borders/box_borders/gradient_box_border.dart';
+import 'package:kanboo/src/constants/gradients.dart';
 import 'package:kanboo/src/constants/styles.dart';
 import 'package:kanboo/src/screens/game/game_details_1.dart';
 class GameViewListItem extends StatelessWidget {
-  const GameViewListItem({super.key});
+  final int spots;
+  const GameViewListItem({super.key,required this.spots});
 
   @override
   Widget build(BuildContext context) {
     return  GestureDetector(
       onTap: (){
-        Get.to(GameDetailsViewScreen());
+        Get.to(GameDetailsViewScreen(spots: this.spots,));
       },
       child: Container(
         decoration: BoxDecoration(
@@ -18,7 +21,9 @@ class GameViewListItem extends StatelessWidget {
             image: AssetImage("assets/patterns.png",),
             fit: BoxFit.cover,
           ),
+
           gradient: LinearGradient(
+
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
@@ -60,7 +65,7 @@ class GameViewListItem extends StatelessWidget {
                   color: Colors.white.withOpacity(.06),
                   borderRadius: BorderRadius.circular(20)
               ),
-              child: Text("No Spots",style: AppStyles.DESCRIPTION_STYLE.copyWith(color: Colors.white.withOpacity(.6)),)
+              child: Text(this.spots.toString() + " Spots",style: AppStyles.DESCRIPTION_STYLE.copyWith(color: Colors.white.withOpacity(.6)),)
 
             ).marginOnly(bottom: 15),
             Text("Starts at 11:00 PM",style: AppStyles.DESCRIPTION_STYLE.copyWith(color: Colors.white,fontSize: 13),)

@@ -155,7 +155,7 @@ class _GamesViewState extends State<GamesView> {
             mainAxisSpacing: 13),
         itemCount: 10,
         itemBuilder: (BuildContext ctx, index) {
-          return GameViewListItem();
+          return GameViewListItem(spots: index,);
         }).marginOnly(left: 20,right: 20);
   }
 }

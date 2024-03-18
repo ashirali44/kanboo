@@ -9,7 +9,7 @@ import '../../constants/colors.dart';
 import '../../constants/gradients.dart';
 
 class RoundButtonGradient extends StatelessWidget {
-  const RoundButtonGradient({
+   RoundButtonGradient({
     Key? key,
     this.logoOnly = false,
     this.width = double.infinity,
@@ -21,7 +21,8 @@ class RoundButtonGradient extends StatelessWidget {
     this.radius = 16,
     this.gradientStroke = 0.5,
     required this.onPress,
-    required this.svgLogo
+    required this.svgLogo,
+     this.bgGradient = AppGradients.RoundButtonBG,
   }) : super(key: key);
 
   final double width;
@@ -29,6 +30,7 @@ class RoundButtonGradient extends StatelessWidget {
   final double withInBetween;
   final double height;
   final LinearGradient gradient;
+  LinearGradient bgGradient;
   final double radius;
   final double gradientStroke;
   final VoidCallback onPress;
@@ -44,7 +46,7 @@ class RoundButtonGradient extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-          gradient: this.showBg ? AppGradients.RoundButtonBG : null,
+          gradient: this.showBg ?  this.bgGradient: null,
           border: GradientBoxBorder(
             gradient: gradient,
             width: gradientStroke,

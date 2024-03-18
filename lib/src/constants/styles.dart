@@ -14,5 +14,8 @@ class AppStyles {
   static TextStyle GAME_DETAILS_VIEW =
   GoogleFonts.urbanist(color: AppColors.WHITE_COLOR,fontSize: 20,
   fontWeight: FontWeight.w500);
-
+  static TextStyle DETAIL_TEXT_STYLE_WHITE =
+  GoogleFonts.urbanist(color: Colors.white, fontWeight: FontWeight.w400, fontSize: 15);
+  static TextStyle TILES_STYLE =
+      GoogleFonts.urbanist(color: AppColors.WHITE_COLOR,fontSize: 18,);
 }
