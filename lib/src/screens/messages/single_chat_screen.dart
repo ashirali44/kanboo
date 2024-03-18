@@ -7,6 +7,7 @@ import '../../constants/styles.dart';
 import '../../widgets/background.dart';
 import '../../widgets/buttons/circularbutton.dart';
 import '../../widgets/fields/auth_field.dart';
+import 'chat_details_screen.dart';
 
 class ChatMessage {
   final String message;
@@ -56,9 +57,14 @@ class _SingleChatMessageScreenState extends State<SingleChatMessageScreen> {
           ),
           centerTitle: true,
           actions: [
-            SvgPicture.asset(
-              'assets/dots.svg',
-              height: 30,
+            InkWell(
+              onTap: (){
+                Get.to(ChatDetailsScreen());
+              },
+              child: SvgPicture.asset(
+                'assets/dots.svg',
+                height: 30,
+              ),
             ),
             SizedBox(
               width: 20,
