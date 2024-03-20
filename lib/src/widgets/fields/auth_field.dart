@@ -15,10 +15,12 @@ class InputFieldFlutter extends StatefulWidget {
   final prefixpath;
   final showsuffix;
   final suffixpath;
+  final Color svgColor;
 
   const InputFieldFlutter({
     Key? key,
     this.height = 55,
+    this.svgColor = Colors.white,
     this.showprefix = false,
     this.prefixpath = 'assets/search_white.svg',
     this.showsuffix = false,
@@ -68,7 +70,8 @@ class _InputFieldFlutterState extends State<InputFieldFlutter> {
                 ) : null,
                 suffixIcon: widget.showsuffix ? Padding(
                   padding: const EdgeInsets.all(12.0),
-                  child: SvgPicture.asset(widget.suffixpath,height: 20,),
+                  child: SvgPicture.asset(widget.suffixpath,height: 20,
+                  color: widget.svgColor,),
                 ) : null,
                 hintStyle: AppStyles.DESCRIPTION_STYLE,
                 hintText: widget.hintText,

@@ -27,7 +27,10 @@ class SettingsScreen extends StatelessWidget {
             SettingListTileItem(text: 'Account Info',prefixIcon: 'account',),
             SettingListTileItem(text: 'Help/FAQ',prefixIcon: 'help',),
             SettingListTileItem(text: 'Privacy Policy',prefixIcon: 'privacy',),
-
+            SettingListTileItem(
+              text: 'Log Out',
+              prefixIcon: 'logout',
+            ).marginOnly(bottom: 10),
 
           ],
         ).marginOnly(left: 20, right: 20),

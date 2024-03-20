@@ -77,8 +77,16 @@ class _CreateGameScreenState extends State<CreateGameScreen> {
         ).marginOnly(bottom: 20),
 
         InputFieldFlutter(
+          labelText: 'Formation',
+          showsuffix: true,
+          suffixpath: 'assets/Dropdown.svg',
+          hintText: 'Select Formation',
+          controller: TextEditingController(),
+        ).marginOnly(bottom: 20),
+
+        InputFieldFlutter(
           labelText: 'Players Allowed',
-          hintText: 'Enter here',
+          hintText: '11',
           controller: TextEditingController(),
 
         ).marginOnly(bottom: 50),

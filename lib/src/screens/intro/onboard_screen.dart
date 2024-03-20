@@ -93,10 +93,15 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            'Skip',
-            textAlign: TextAlign.center,
-            style: TextStyle(color: AppColors.DULL_WHITE, fontSize: 14),
+          InkWell(
+            onTap: (){
+              Get.toNamed(AppRoutes.mainauth);
+            },
+            child: Text(
+              'Skip',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: AppColors.DULL_WHITE, fontSize: 14),
+            ),
           ),
           CircularButton(
               onPress: (){
